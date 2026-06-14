@@ -39,6 +39,25 @@ pip install torch --index-url https://download.pytorch.org/whl/cu121
 **Interface desktop :**
 ```bash
 pip install PySide6
+# ─── Core ───────────────────────────────────────────────────
+numpy>=1.24.0
+scipy>=1.10.0          # ILP solver (d2_offline_optimizer, d2_compiler_v2)
+
+# ─── GGUF / LLM weights ─────────────────────────────────────
+gguf>=0.9.0            # d2_rtx_gguf_profiler, d2_xdna2_layer_profiler
+
+# ─── HuggingFace ────────────────────────────────────────────
+huggingface_hub>=0.20.0
+safetensors>=0.4.0     # chargement poids HF
+
+# ─── GPU (optionnel — active le SVD GPU et benchmarks réels) ─
+# torch>=2.0.0         # décommentez si GPU disponible
+
+# ─── UI Desktop (optionnel) ─────────────────────────────────
+# PySide6>=6.5.0       # décommentez pour d2_ui.py
+
+# ─── UI Web (optionnel) ─────────────────────────────────────
+# gradio>=4.0.0        # décommentez pour app.py
 ```
 
 ---
