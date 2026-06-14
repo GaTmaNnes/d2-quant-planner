@@ -1,0 +1,2468 @@
+{
+  "blk.0.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.0.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2816
+    ]
+  },
+  "blk.0.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      8448
+    ]
+  },
+  "blk.0.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.0.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.0.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.244,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.0.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.2,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.0.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.559,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.0.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "output.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      248320,
+      3360
+    ]
+  },
+  "token_embd.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      248320,
+      2304
+    ]
+  },
+  "blk.1.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.1.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2816
+    ]
+  },
+  "blk.1.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      8448
+    ]
+  },
+  "blk.1.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.1.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.1.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.154,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.1.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.132,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.1.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 3.268,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.1.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.2.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.2.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2816
+    ]
+  },
+  "blk.2.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      8448
+    ]
+  },
+  "blk.2.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.2.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.2.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.092,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.2.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.045,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.2.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 2.53,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.2.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.3.attn_k.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.3.attn_output.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.3.attn_q.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.3.attn_v.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2816
+    ]
+  },
+  "blk.3.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      8448
+    ]
+  },
+  "blk.3.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.3.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.4.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.4.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.4.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.4.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.4.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.4.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.137,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.4.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.188,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.4.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 4.106,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.4.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.5.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.5.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.5.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.5.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.5.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.5.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.157,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.5.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.169,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.5.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 3.144,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.5.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.6.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.6.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.6.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.6.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.6.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.6.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.236,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.6.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.271,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.6.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 3.997,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.6.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.7.attn_k.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.7.attn_output.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.7.attn_q.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.7.attn_v.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.7.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.7.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.7.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.8.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.8.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.8.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.8.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.8.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.8.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.218,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.8.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.361,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.8.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 2.986,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.8.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.9.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.9.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.9.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.9.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.9.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.9.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.299,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.9.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.42,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.9.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 3.321,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.9.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.10.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.10.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.10.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.10.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.10.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.10.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.22,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.10.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.4,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.10.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 3.06,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.10.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.11.attn_k.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.11.attn_output.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.11.attn_q.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.11.attn_v.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.11.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.11.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.11.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.12.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.12.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.12.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.12.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.12.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.12.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.298,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.12.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.479,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.12.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 3.848,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.12.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.13.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.13.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.13.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.13.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.13.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.13.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.238,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.13.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.367,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.13.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 4.516,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.13.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.14.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.14.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.14.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.14.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.14.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.14.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.131,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.14.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.334,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.14.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 2.921,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.14.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.15.attn_k.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.15.attn_output.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.15.attn_q.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.15.attn_v.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.15.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.15.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.15.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.16.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.16.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.16.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.16.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.16.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.16.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.308,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.16.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.523,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.16.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 4.581,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.16.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.17.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.17.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.17.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.17.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.17.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.17.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.25,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.17.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.421,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.17.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 3.347,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.17.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.18.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.18.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.18.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.18.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.18.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.18.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.206,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.18.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.323,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.18.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 4.027,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.18.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.19.attn_k.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.19.attn_output.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.19.attn_q.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.19.attn_v.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.19.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.19.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.19.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.20.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.20.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.20.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.20.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.20.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.20.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.19,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.20.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.343,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.20.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 3.152,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.20.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.21.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.21.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.21.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.21.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.21.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.21.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.032,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.21.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.111,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.21.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 3.365,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.21.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.22.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.22.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.22.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.22.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.22.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.22.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.092,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.22.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.195,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.22.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 2.883,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.22.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.23.attn_k.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.23.attn_output.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.23.attn_q.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.23.attn_v.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.23.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.23.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.23.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.24.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.24.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.24.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.24.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.24.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.24.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.141,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.24.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.204,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.24.ssm_conv1d.weight": {
+    "precision": "INT8_SAFE",
+    "alpha_w": 2.55,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.24.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.25.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.25.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.25.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.25.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.25.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.25.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.164,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.25.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.205,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.25.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 2.199,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.25.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.26.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.26.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.26.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.26.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.26.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.26.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.077,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.26.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.051,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.26.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 2.023,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.26.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.27.attn_k.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.27.attn_output.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.27.attn_q.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.27.attn_v.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.27.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.27.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.27.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.28.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.28.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.28.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.28.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.28.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.28.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.278,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.28.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.388,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.28.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 2.061,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.28.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.29.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.29.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.29.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.29.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.29.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.29.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.099,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.29.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.142,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.29.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 2.06,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.29.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.30.attn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "OTHER",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.30.attn_qkv.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.30.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.30.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.30.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.30.ssm_alpha.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.166,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.30.ssm_beta.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.322,
+    "op_class": "OTHER",
+    "shape": [
+      32,
+      2304
+    ]
+  },
+  "blk.30.ssm_conv1d.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 3.13,
+    "op_class": "SSM_CONV",
+    "shape": [
+      8192,
+      4
+    ]
+  },
+  "blk.30.ssm_out.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "SSM_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.31.attn_k.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.31.attn_output.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_OUTPUT",
+    "shape": [
+      4096,
+      2304
+    ]
+  },
+  "blk.31.attn_q.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      8192,
+      2304
+    ]
+  },
+  "blk.31.attn_v.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "ATTN_INPUT",
+    "shape": [
+      1024,
+      2304
+    ]
+  },
+  "blk.31.ffn_down.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_OUTPUT",
+    "shape": [
+      4096,
+      6912
+    ]
+  },
+  "blk.31.ffn_gate.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  },
+  "blk.31.ffn_up.weight": {
+    "precision": "FP16_REQUIRED",
+    "alpha_w": 1.0,
+    "op_class": "FFN_INPUT",
+    "shape": [
+      12288,
+      2304
+    ]
+  }
+}

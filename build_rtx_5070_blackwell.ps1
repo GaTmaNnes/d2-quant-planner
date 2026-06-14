@@ -1,0 +1,4 @@
+# Script de Build optimisé pour RTX 5070 (sn120)
+# Utilise NVFP4 pour les couches sûres et FP16 pour les clusters d'outliers
+
+trtllm-build --checkpoint_dir ./trt_checkpoint --output_dir ./engine_blackwell_sn120 --dtype float16 --quantization nvfp4 --use_gpt_attention_plugin enable --use_gemm_plugin enable --per_layer_precision blk.0.ssm_conv1d.weight:fp16,blk.1.ssm_conv1d.weight:fp16,blk.2.ssm_conv1d.weight:fp16,blk.4.ssm_conv1d.weight:fp16,blk.8.ssm_conv1d.weight:fp16,blk.18.ssm_conv1d.weight:fp16,blk.25.ssm_conv1d.weight:fp16,blk.26.ssm_conv1d.weight:fp16,blk.28.ssm_conv1d.weight:fp16,blk.29.ssm_conv1d.weight:fp16,blk.30.ssm_conv1d.weight:fp16
