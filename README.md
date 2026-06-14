@@ -20,3 +20,11 @@ git clone https://github.com/tonusername/d2-quant-planner.git
 cd d2-quant-planner
 
 pip install -r requirements.txt
+
+
+
+⚠️ Licence communautaire
+
+Utilisation gratuite pour les particuliers, l'éducation et la recherche.
+
+Toute utilisation commerciale nécessite une licence commerciale distincte auprès de l'auteur.
