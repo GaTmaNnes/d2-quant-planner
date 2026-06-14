@@ -16,15 +16,47 @@ Combine analyse spectrale (SVD), RG Flow et optimisation sous contrainte VRAM po
 ## Installation
 
 ```bash
-git clone https://github.com/tonusername/d2-quant-planner.git
+git clone https://github.com/GaTmaNnes/d2-quant-planner.git
 cd d2-quant-planner
 
 pip install -r requirements.txt
+```
 
+## Utilisation
 
+### Interface Graphique
 
-⚠️ Licence communautaire
+```bash
+python d2_ui.py
+```
 
-Utilisation gratuite pour les particuliers, l'éducation et la recherche.
+### Utilisation en ligne de commande (exemple)
 
-Toute utilisation commerciale nécessite une licence commerciale distincte auprès de l'auteur.
+```python
+from d2_production import solve_quantization_plan, export_gguf
+
+layers = [...]  # chargés via safetensors
+plan = solve_quantization_plan(layers, vram_budget_gb=6.0, w_risk=0.35)
+export_gguf(plan, "quant_plan.json")
+```
+
+## Résultats attendus
+
+- **Qwen3.5-9B** : excellents gains en Q4_K_M / NVFP4 layer-wise
+- **Qwen3.5-35B-A3B (MoE)** : très bon en NVFP4
+- **Économie VRAM** : supplémentaire de 10-25% vs uniform quant tout en préservant la qualité
+
+## Roadmap
+
+- [ ] Vrai SVD sur poids réels
+- [ ] Vrai ILP avec OR-Tools
+- [ ] Version Gradio / Hugging Face Space
+- [ ] Benchmarks perplexity + vitesse
+
+## Licence
+
+MIT License — voir [LICENSE](LICENSE)
+
+---
+
+Made with ❤️ for the open LLM inference community

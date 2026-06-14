@@ -1,0 +1,39 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# GGUF files
+*.gguf
+*.ggml
+
+# Hugging Face cache
+hf_cache/
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.VS/
+
+# Generated files
+*.json
+!requirements.txt
+current_plan.json
+quant_plan*.json
+
+# Logs
+*.log
