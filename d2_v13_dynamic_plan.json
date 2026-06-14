@@ -1,0 +1,263 @@
+{
+  "meta": {
+    "step": 3,
+    "batch_size": 16,
+    "sink_threshold": 4,
+    "ema_alpha": 0.15,
+    "sink_dtype": "BF16"
+  },
+  "layers": {
+    "blk.0.attn_q.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.1,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.0.attn_k.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.1,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.0.attn_v.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.1,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.0.attn_output.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.1,
+      "op_class": "ATTN_OUTPUT",
+      "stability": 0.6141
+    },
+    "blk.0.ffn_gate.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.1,
+      "op_class": "FFN_INPUT",
+      "stability": 0.8916
+    },
+    "blk.0.ffn_up.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.1,
+      "op_class": "FFN_INPUT",
+      "stability": 0.8916
+    },
+    "blk.0.ffn_down.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.1,
+      "op_class": "FFN_OUTPUT",
+      "stability": 0.8916
+    },
+    "blk.1.attn_q.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.15,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.1.attn_k.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.15,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.1.attn_v.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.15,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.1.attn_output.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.15,
+      "op_class": "ATTN_OUTPUT",
+      "stability": 0.6141
+    },
+    "blk.1.ffn_gate.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.15,
+      "op_class": "FFN_INPUT",
+      "stability": 0.8916
+    },
+    "blk.1.ffn_up.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.15,
+      "op_class": "FFN_INPUT",
+      "stability": 0.8916
+    },
+    "blk.1.ffn_down.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.15,
+      "op_class": "FFN_OUTPUT",
+      "stability": 0.8916
+    },
+    "blk.2.attn_q.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.2,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.2.attn_k.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.2,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.2.attn_v.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.2,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.2.attn_output.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.2,
+      "op_class": "ATTN_OUTPUT",
+      "stability": 0.6141
+    },
+    "blk.2.ffn_gate.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.2,
+      "op_class": "FFN_INPUT",
+      "stability": 0.8916
+    },
+    "blk.2.ffn_up.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.2,
+      "op_class": "FFN_INPUT",
+      "stability": 0.8916
+    },
+    "blk.2.ffn_down.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.2,
+      "op_class": "FFN_OUTPUT",
+      "stability": 0.8916
+    },
+    "blk.3.attn_q.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.25,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.3.attn_k.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.25,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.3.attn_v.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.25,
+      "op_class": "ATTN_INPUT",
+      "stability": 0.6141
+    },
+    "blk.3.attn_output.weight": {
+      "precision": "INT8",
+      "kernel": "CUTLASS",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.25,
+      "op_class": "ATTN_OUTPUT",
+      "stability": 0.6141
+    },
+    "blk.3.ffn_gate.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.25,
+      "op_class": "FFN_INPUT",
+      "stability": 0.8916
+    },
+    "blk.3.ffn_up.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.25,
+      "op_class": "FFN_INPUT",
+      "stability": 0.8916
+    },
+    "blk.3.ffn_down.weight": {
+      "precision": "NVFP4_SAFE",
+      "kernel": "MARLIN",
+      "base_precision": "INT8",
+      "best_quant": "NVFP4_SAFE",
+      "alpha_w": 2.25,
+      "op_class": "FFN_OUTPUT",
+      "stability": 0.8916
+    }
+  }
+}

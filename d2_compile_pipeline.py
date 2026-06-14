@@ -44,8 +44,10 @@ FORMAT_SPECS = {
     "FP16":     {"bpw": 2.000, "jit": 0.00, "kernel": "CUBLASLT"},
     "BF16":     {"bpw": 2.000, "jit": 0.00, "kernel": "CUBLASLT"},
     "INT8":     {"bpw": 1.000, "jit": 0.00, "kernel": "CUTLASS"},
+    "INT4":     {"bpw": 0.500, "jit": 0.00, "kernel": "MARLIN"},   # fix: clé manquante
     "INT4_AWQ": {"bpw": 0.500, "jit": 0.00, "kernel": "MARLIN"},
     "NVFP4":    {"bpw": 0.531, "jit": 0.00, "kernel": "MARLIN"},
+    "Q4_K_M":   {"bpw": 0.500, "jit": 0.00, "kernel": "MARLIN"},   # BS-02
     "Q4NX_JIT": {"bpw": 0.563, "jit": 0.06, "kernel": "CUTLASS"},
 }
 
@@ -124,17 +126,47 @@ ALPHA_INT8  = 1.50   # alpha >= seuil → INT8 safe
 ALPHA_BF16  = 1.20   # alpha >= seuil → BF16 safe
 
 # BPW par dtype
-BPW = {"FP16": 2.0, "BF16": 2.0, "INT8": 1.0, "INT4": 0.5, "NVFP4": 0.531}
+BPW = {"FP16": 2.0, "BF16": 2.0, "INT8": 1.0, "INT4": 0.5, "INT4_AWQ": 0.5, "Q4_K_M": 0.5, "NVFP4": 0.531}
 
 # TPS relatif (FP16 = 1.0)
 TPS_REL = {"FP16": 1.0, "BF16": 1.05, "INT8": 1.8, "INT4": 2.65, "NVFP4": 2.65}
 
-def _policy_from_alpha(name: str, alpha: float, cls: str) -> str:
+
+# ── BS-04 : Activation Outlier Guard (SmoothQuant / ATOM) ────────────────
+# Kurtosis > KURTOSIS_OUTLIER_THRESHOLD → outliers d'activation → forcer INT8
+# Réf: ATOM MLSys 2024, SmoothQuant arxiv 2211.10438
+KURTOSIS_OUTLIER_THRESHOLD = 100.0
+
+def activation_kurtosis_synthetic(layer_idx: int, cls: str, n_layers: int) -> float:
+    """
+    Kurtosis synthétique pour mode demo.
+    ATTN layers early/late ont tendance à avoir plus d'outliers (empirique).
+    FFN mid-layers sont généralement propres.
+    """
+    import math
+    pos = layer_idx / max(n_layers - 1, 1)
+    if cls in ("attn",):
+        # ATTN: outliers élevés aux extrémités (layer 0 et last)
+        base = 80.0 + 120.0 * (1.0 - 4 * pos * (1 - pos))  # parabolique
+        return max(0.0, base + 20.0 * math.sin(layer_idx * 0.7))
+    if cls in ("embed", "head"):
+        return 200.0   # toujours outliers -> FP16 déjà forcé
+    # FFN : généralement safe
+    return max(0.0, 30.0 + 15.0 * math.sin(layer_idx * 1.3))
+
+def activation_safe_for_int4(kurtosis: float) -> bool:
+    """INT4 safe ssi kurtosis < seuil outlier. Sinon forcer INT8 minimum."""
+    return kurtosis < KURTOSIS_OUTLIER_THRESHOLD
+
+def _policy_from_alpha(name: str, alpha: float, cls: str, kurtosis: float = 0.0) -> str:
     """Politique de quantization par alpha_w et classe de couche."""
     # couches critiques forcées FP16
     if cls in ("embed", "head", "norm"):
         return "FP16"
     if alpha >= ALPHA_INT4:
+        # BS-04: si outliers activations → forcer INT8 même si alpha safe
+        if not activation_safe_for_int4(kurtosis):
+            return "INT8"   # kurtosis > 100 → INT4 trop risqué (ATOM 2024)
         return "INT4"
     if alpha >= ALPHA_INT8:
         return "INT8"
@@ -151,9 +183,10 @@ def ilp_optimize(layers: List[Dict], budget_gb: float) -> List[Dict]:
     n = len(layers)
     dtypes_per_layer = []
     for lay in layers:
-        alpha = lay["alpha_w"]
-        cls   = lay["cls"]
-        base  = _policy_from_alpha(lay["name"], alpha, cls)
+        alpha    = lay["alpha_w"]
+        cls      = lay["cls"]
+        kurtosis = lay.get("kurtosis", 0.0)   # BS-04
+        base     = _policy_from_alpha(lay["name"], alpha, cls, kurtosis)
 
         # options disponibles (base + moins agressifs)
         order = ["INT4", "INT8", "BF16", "FP16"]
@@ -484,14 +517,80 @@ def make_demo_layers(model_name: str = "Llama-3-8B", n_layers: int = 32) -> List
 # PIPELINE PRINCIPAL
 # ══════════════════════════════════════════════════════════════════════════════
 
+
+# ══════════════════════════════════════════════════════════════════════════════
+# MODULE 3b — KV CACHE BUDGET (BS-05)
+# Absent de D2 original. Pour ctx > 4K tokens, KV cache = 30-60% du VRAM.
+# Réf: KVQuant arxiv 2401.18079, KIVI arxiv 2402.02750
+# ══════════════════════════════════════════════════════════════════════════════
+
+KV_CACHE_BPV = {"FP16": 2.0, "BF16": 2.0, "INT8": 1.0, "INT4": 0.5}
+KV_SINK_TOKENS = 4   # BS-01: StreamingLLM — protéger 4 premiers tokens en FP16
+
+def kv_cache_gb(
+    n_layers: int,
+    n_kv_heads: int,
+    head_dim: int,
+    ctx_len: int,
+    kv_dtype: str = "FP16",
+) -> float:
+    """
+    Calcule le VRAM KV cache en GB.
+    Les KV_SINK_TOKENS premiers tokens restent en FP16 (StreamingLLM).
+    Le reste est quantisé selon kv_dtype.
+
+    Args:
+        n_layers:   nombre de couches transformer
+        n_kv_heads: nombre de têtes KV (GQA possible < n_heads)
+        head_dim:   dimension par tête
+        ctx_len:    longueur de contexte en tokens
+        kv_dtype:   dtype du KV cache quantisé
+
+    Returns:
+        VRAM en GB
+    """
+    bpv_kv   = KV_CACHE_BPV.get(kv_dtype, 2.0)
+    bpv_fp16 = KV_CACHE_BPV["FP16"]
+    t_quant  = max(0, ctx_len - KV_SINK_TOKENS)
+    t_fp16   = min(KV_SINK_TOKENS, ctx_len)
+    # K + V par couche
+    bytes_q  = t_quant * n_kv_heads * head_dim * 2 * bpv_kv   * n_layers
+    bytes_f  = t_fp16  * n_kv_heads * head_dim * 2 * bpv_fp16 * n_layers
+    return (bytes_q + bytes_f) / 1e9
+
+def infer_kv_params(layers: List[Dict]):
+    """Infère n_kv_heads et head_dim depuis la liste de couches."""
+    n_layers = sum(1 for l in layers if l["cls"] == "attn")
+    # Heuristique : shape attn_q typiquement [hidden, hidden]
+    hidden = 4096
+    for l in layers:
+        if l["cls"] == "attn" and len(l["shape"]) >= 2:
+            hidden = max(l["shape"])
+            break
+    # GQA Llama-3: n_kv_heads = n_heads // 4, head_dim=128
+    n_heads    = hidden // 128
+    n_kv_heads = max(1, n_heads // 4)
+    head_dim   = 128
+    return n_layers, n_kv_heads, head_dim
+
 def run_pipeline(layers: List[Dict], budget_gb: float, model_path: str,
-                 target: str, bw_eff: float = 60.0, quiet: bool = False) -> Dict:
+                 target: str, bw_eff: float = 60.0, quiet: bool = False,
+                 ctx_len: int = 2048, kv_dtype: str = "INT8",
+                 roofline_correction: float = 0.65) -> Dict:
+
+    # ── BS-05 : KV Cache budget (soustrait avant ILP) ──────────────────────
+    n_kv_layers, n_kv_heads, head_dim = infer_kv_params(layers)
+    kv_gb = kv_cache_gb(n_kv_layers, n_kv_heads, head_dim, ctx_len, kv_dtype)
+    weight_budget = max(0.5, budget_gb - kv_gb)
+    if not quiet:
+        print("  [KV]  ctx={} tokens  KV {}={:.3f} GB  weight_budget={:.2f} GB".format(
+              ctx_len, kv_dtype, kv_gb, weight_budget))
 
     # ── Étape 1 : ILP Optimizer ─────────────────────────────────────────────
     if not quiet:
         print("  [1/4] ILP Optimizer (budget={:.1f} GB, scipy={})".format(
-              budget_gb, HAS_SCIPY))
-    plan = ilp_optimize(layers, budget_gb)
+              weight_budget, HAS_SCIPY))
+    plan = ilp_optimize(layers, weight_budget)
     total_gb = sum(lay["gb"] for lay in plan)
 
     # ── Étape 2 : BW Simulation ─────────────────────────────────────────────
@@ -504,7 +603,8 @@ def run_pipeline(layers: List[Dict], budget_gb: float, model_path: str,
         if len(lay["shape"]) >= 2:
             gb  = lay["gb"]
             fmt = lay["dtype"]
-            tps_map[lay["name"]] = tps_bw(hidden, gb, fmt, bw_eff)
+            raw_tps = tps_bw(hidden, gb, fmt, bw_eff)
+            tps_map[lay["name"]] = raw_tps * roofline_correction  # BS-03: ×0.65
 
     # ── Étape 3 : Bottleneck Analysis ───────────────────────────────────────
     if not quiet:
@@ -531,6 +631,8 @@ def run_pipeline(layers: List[Dict], budget_gb: float, model_path: str,
     return {
         "plan":        plan,
         "total_gb":    total_gb,
+        "kv_gb":       kv_gb,           # BS-05
+        "weight_budget": weight_budget, # BS-05
         "bottleneck":  bn,
         "routed_gen":  routed_gen,
         "routed_rag":  routed_rag,
@@ -554,8 +656,13 @@ def print_report(result: Dict, budget_gb: float, target: str):
     print("  RAPPORT D2 COMPILE PIPELINE")
     print("=" * 65)
     print("  Couches    : {}".format(len(plan)))
-    print("  VRAM       : {:.2f} GB / {:.1f} GB ({:.0f}%)".format(
-          total_gb, budget_gb, total_gb / budget_gb * 100))
+    kv_gb = result.get("kv_gb", 0.0)
+    print("  Poids      : {:.2f} GB / {:.2f} GB ({:.0f}%)".format(
+          total_gb, result.get("weight_budget", budget_gb),
+          total_gb / max(result.get("weight_budget", budget_gb), 0.01) * 100))
+    print("  KV Cache   : {:.3f} GB  (BS-05 inclus)".format(kv_gb))
+    print("  VRAM total : {:.2f} GB / {:.1f} GB".format(
+          total_gb + kv_gb, budget_gb))
     print()
 
     print("  Distribution :")
@@ -613,7 +720,14 @@ def main():
                         help="Format d'export (défaut: llamacpp)")
     parser.add_argument("--bw-eff", type=float, default=60.0,
                         help="Bande passante effective GB/s (défaut: 60)")
-    parser.add_argument("--quiet",  action="store_true")
+    parser.add_argument("--quiet",       action="store_true")
+    parser.add_argument("--ctx-len",     type=int, default=2048,
+                        help="Longueur de contexte tokens (BS-05 KV cache, defaut: 2048)")
+    parser.add_argument("--kv-dtype",    default="INT8",
+                        choices=["FP16","BF16","INT8","INT4"],
+                        help="Dtype KV cache quantise (defaut: INT8)")
+    parser.add_argument("--roofline-correction", type=float, default=0.65,
+                        help="Facteur correction roofline (BS-03, defaut: 0.65)")
     args = parser.parse_args()
 
     demo = args.demo or not args.model
@@ -622,8 +736,8 @@ def main():
     print("=" * 65)
     print("  D2 Compile Pipeline — {} → {}".format(
           "démo" if demo else model_path, args.target.upper()))
-    print("  Budget: {:.1f} GB  |  BW: {} GB/s  |  scipy={}  |  gguf={}".format(
-          args.budget, args.bw_eff, HAS_SCIPY, HAS_GGUF))
+    print("  Budget: {:.1f} GB  |  BW: {} GB/s  |  ctx: {} tok  |  scipy={} gguf={}".format(
+          args.budget, args.bw_eff, args.ctx_len, HAS_SCIPY, HAS_GGUF))
     print("=" * 65)
     print()
 
@@ -654,7 +768,9 @@ def main():
 
     # ── Pipeline ────────────────────────────────────────────────────────────
     result = run_pipeline(layers, args.budget, model_path,
-                          args.target, args.bw_eff, args.quiet)
+                          args.target, args.bw_eff, args.quiet,
+                          ctx_len=args.ctx_len, kv_dtype=args.kv_dtype,
+                          roofline_correction=args.roofline_correction)
 
     if not args.quiet:
         print_report(result, args.budget, args.target)
