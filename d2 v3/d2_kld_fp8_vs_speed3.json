@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-08-26 00:25:18",
+  "method": "real_dequant_llama_cpp",
+  "n_tensors": 5,
+  "n_valid": 5,
+  "layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "summary": {
+    "Q5_K": {
+      "count": 5,
+      "avg_snr_db": 0.0,
+      "avg_cosine": 0.0
+    }
+  },
+  "tensors": [
+    {
+      "layer": 0,
+      "gguf_name": "blk.0.attn_gate.weight",
+      "hf_name": "model.language_model.layers.0.linear_attn.in_proj_z.weight",
+      "quant_type": "Q5_K",
+      "shape": [
+        4096,
+        2048
+      ],
+      "hf_mb": 33.55,
+      "rel_l2": 1.0,
+      "snr_db": -0.0,
+      "cosine": 0.0,
+      "mse": 0.0002838408690877259,
+      "max_err": 0.287109
+    },
+    {
+      "layer": 1,
+      "gguf_name": "blk.1.attn_gate.weight",
+      "hf_name": "model.language_model.layers.1.linear_attn.in_proj_z.weight",
+      "quant_type": "Q5_K",
+      "shape": [
+        4096,
+        2048
+      ],
+      "hf_mb": 33.55,
+      "rel_l2": 1.0,
+      "snr_db": -0.0,
+      "cosine": 0.0,
+      "mse": 0.00025822449242696166,
+      "max_err": 0.292236
+    },
+    {
+      "layer": 2,
+      "gguf_name": "blk.2.attn_gate.weight",
+      "hf_name": "model.language_model.layers.2.linear_attn.in_proj_z.weight",
+      "quant_type": "Q5_K",
+      "shape": [
+        4096,
+        2048
+      ],
+      "hf_mb": 33.55,
+      "rel_l2": 1.0,
+      "snr_db": -0.0,
+      "cosine": 0.0,
+      "mse": 0.00022890541004016995,
+      "max_err": 0.290527
+    },
+    {
+      "layer": 4,
+      "gguf_name": "blk.4.attn_gate.weight",
+      "hf_name": "model.language_model.layers.4.linear_attn.in_proj_z.weight",
+      "quant_type": "Q5_K",
+      "shape": [
+        4096,
+        2048
+      ],
+      "hf_mb": 33.55,
+      "rel_l2": 1.0,
+      "snr_db": -0.0,
+      "cosine": 0.0,
+      "mse": 0.00022986168914940208,
+      "max_err": 0.276855
+    },
+    {
+      "layer": 5,
+      "gguf_name": "blk.5.attn_gate.weight",
+      "hf_name": "model.language_model.layers.5.linear_attn.in_proj_z.weight",
+      "quant_type": "Q5_K",
+      "shape": [
+        4096,
+        2048
+      ],
+      "hf_mb": 33.55,
+      "rel_l2": 1.0,
+      "snr_db": -0.0,
+      "cosine": 0.0,
+      "mse": 0.00022497368627227843,
+      "max_err": 0.287109
+    }
+  ]
+}
