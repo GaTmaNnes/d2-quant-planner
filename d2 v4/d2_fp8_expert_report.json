@@ -1,0 +1,11 @@
+{
+ "generated_at": "2026-08-26",
+ "method": "fp8_safetensors_vs_gguf",
+ "gguf": "Qwen3.6-35B-A3B-D2-S1I-COLDQ2-IMATRIX-OFF.gguf",
+ "n_layers": 40,
+ "thresholds_db": {
+  "robuste": 20.0,
+  "moyen": 12.0
+ },
+ "experts": []
+}

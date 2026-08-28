@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-08-27 22:26:07",
+  "method": "llama-bench (mesure réelle CUDA) + nvidia-smi",
+  "gpu": {
+    "name": "NVIDIA GeForce GTX 1080",
+    "vram_total_mb": 8192,
+    "vram_used_mb": 2326,
+    "driver": "581.80"
+  },
+  "model": "C:/Users/videl/.lmstudio/models/Lord-H4D3ZS/Qwen 9b/Qwen3.8-9B-Cyber-Exploit-Agent-v3-Q4_K_M.gguf",
+  "model_gb": 5.78,
+  "pp": 512,
+  "tg": 128,
+  "results": [
+    {
+      "cmd": [
+        "llama-bench.exe",
+        "-m",
+        "C:/Users/videl/.lmstudio/models/Lord-H4D3ZS/Qwen 9b/Qwen3.8-9B-Cyber-Exploit-Agent-v3-Q4_K_M.gguf",
+        "-p",
+        "512",
+        "-n",
+        "128",
+        "-ngl",
+        "999"
+      ],
+      "wall_s": 29.1,
+      "vram_before_mb": 2326,
+      "vram_after_mb": 2326,
+      "rows": [
+        {
+          "model": "qwen35 9B Q4_K - Medium",
+          "size": "5.37 GiB",
+          "params": "9.20 B",
+          "backend": "CUDA",
+          "ngl": "999",
+          "test": "pp512",
+          "tps": "703.27",
+          "tps_std": "1.24"
+        },
+        {
+          "model": "qwen35 9B Q4_K - Medium",
+          "size": "5.37 GiB",
+          "params": "9.20 B",
+          "backend": "CUDA",
+          "ngl": "999",
+          "test": "tg128",
+          "tps": "29.93",
+          "tps_std": "0.08"
+        }
+      ],
+      "raw": "| model                          |       size |     params | backend    | ngl |            test |                  t/s |\n| ------------------------------ | ---------: | ---------: | ---------- | --: | --------------: | -------------------: |\n| qwen35 9B Q4_K - Medium        |   5.37 GiB |     9.20 B | CUDA       | 999 |           pp512 |        703.27 ± 1.24 |\n| qwen35 9B Q4_K - Medium        |   5.37 GiB |     9.20 B | CUDA       | 999 |           tg128 |         29.93 ± 0.08 |\n\nbuild: 4df29be4f (10454)\n\nggml_cuda_init: found 1 CUDA devices (Total VRAM: 8191 MiB):\n  Device 0: NVIDIA GeForce GTX 1080, compute capability 6.1, VMM: yes, VRAM: 8191 MiB\n",
+      "label": "BASELINE (KV défaut f16)"
+    },
+    {
+      "cmd": [
+        "llama-bench.exe",
+        "-m",
+        "C:/Users/videl/.lmstudio/models/Lord-H4D3ZS/Qwen 9b/Qwen3.8-9B-Cyber-Exploit-Agent-v3-Q4_K_M.gguf",
+        "-p",
+        "512",
+        "-n",
+        "128",
+        "-ngl",
+        "999",
+        "-ctk",
+        "q8_0",
+        "-ctv",
+        "q8_0"
+      ],
+      "wall_s": 29.3,
+      "vram_before_mb": 2326,
+      "vram_after_mb": 2325,
+      "rows": [
+        {
+          "model": "qwen35 9B Q4_K - Medium",
+          "size": "5.37 GiB",
+          "params": "9.20 B",
+          "backend": "CUDA",
+          "ngl": "999",
+          "type_k": "q8_0",
+          "type_v": "q8_0",
+          "test": "pp512",
+          "tps": "695.31",
+          "tps_std": "1.80"
+        },
+        {
+          "model": "qwen35 9B Q4_K - Medium",
+          "size": "5.37 GiB",
+          "params": "9.20 B",
+          "backend": "CUDA",
+          "ngl": "999",
+          "type_k": "q8_0",
+          "type_v": "q8_0",
+          "test": "tg128",
+          "tps": "29.64",
+          "tps_std": "0.06"
+        }
+      ],
+      "raw": "| model                          |       size |     params | backend    | ngl | type_k | type_v |            test |                  t/s |\n| ------------------------------ | ---------: | ---------: | ---------- | --: | -----: | -----: | --------------: | -------------------: |\n| qwen35 9B Q4_K - Medium        |   5.37 GiB |     9.20 B | CUDA       | 999 |   q8_0 |   q8_0 |           pp512 |        695.31 ± 1.80 |\n| qwen35 9B Q4_K - Medium        |   5.37 GiB |     9.20 B | CUDA       | 999 |   q8_0 |   q8_0 |           tg128 |         29.64 ± 0.06 |\n\nbuild: 4df29be4f (10454)\n\nggml_cuda_init: found 1 CUDA devices (Total VRAM: 8191 MiB):\n  Device 0: NVIDIA GeForce GTX 1080, compute capability 6.1, VMM: yes, VRAM: 8191 MiB\n",
+      "label": "KV q8_0"
+    },
+    {
+      "cmd": [
+        "llama-bench.exe",
+        "-m",
+        "C:/Users/videl/.lmstudio/models/Lord-H4D3ZS/Qwen 9b/Qwen3.8-9B-Cyber-Exploit-Agent-v3-Q4_K_M.gguf",
+        "-p",
+        "512",
+        "-n",
+        "128",
+        "-ngl",
+        "999",
+        "-ctk",
+        "f16",
+        "-ctv",
+        "f16"
+      ],
+      "wall_s": 29.1,
+      "vram_before_mb": 2325,
+      "vram_after_mb": 2325,
+      "rows": [
+        {
+          "model": "qwen35 9B Q4_K - Medium",
+          "size": "5.37 GiB",
+          "params": "9.20 B",
+          "backend": "CUDA",
+          "ngl": "999",
+          "test": "pp512",
+          "tps": "695.96",
+          "tps_std": "2.29"
+        },
+        {
+          "model": "qwen35 9B Q4_K - Medium",
+          "size": "5.37 GiB",
+          "params": "9.20 B",
+          "backend": "CUDA",
+          "ngl": "999",
+          "test": "tg128",
+          "tps": "29.83",
+          "tps_std": "0.06"
+        }
+      ],
+      "raw": "| model                          |       size |     params | backend    | ngl |            test |                  t/s |\n| ------------------------------ | ---------: | ---------: | ---------- | --: | --------------: | -------------------: |\n| qwen35 9B Q4_K - Medium        |   5.37 GiB |     9.20 B | CUDA       | 999 |           pp512 |        695.96 ± 2.29 |\n| qwen35 9B Q4_K - Medium        |   5.37 GiB |     9.20 B | CUDA       | 999 |           tg128 |         29.83 ± 0.06 |\n\nbuild: 4df29be4f (10454)\n\nggml_cuda_init: found 1 CUDA devices (Total VRAM: 8191 MiB):\n  Device 0: NVIDIA GeForce GTX 1080, compute capability 6.1, VMM: yes, VRAM: 8191 MiB\n",
+      "label": "KV f16 explicite"
+    }
+  ]
+}
